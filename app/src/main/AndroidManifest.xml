@@ -20,6 +20,12 @@
         android:theme="@style/Theme.Almacen_DoñaJuana"
         tools:targetApi="31">
         <activity
+            android:name=".Login_Admin"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Usuario_Administrador"
+            android:exported="false" />
+        <activity
             android:name=".Mapa_Activity"
             android:exported="false" />
 

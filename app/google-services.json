@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "557288703819",
+    "project_id": "almacendj-6092a",
+    "storage_bucket": "almacendj-6092a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557288703819:android:336bc1136417a97ef84ace",
+        "android_client_info": {
+          "package_name": "com.example.almacen_doajuana"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATIdwCUUIXu9ew1XxD963GgUw7p5gaOmw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
