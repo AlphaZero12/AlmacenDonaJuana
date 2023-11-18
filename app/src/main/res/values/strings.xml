@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Doña Juana</string>
+    <string name="BotonRegistro">Registro</string>
+    <string name="BotonLogin"></string>
+    <string name="CrearCuentaTxt">Crear Una Cuenta</string>
+    <string name="NombreRG">Nombres</string>
+    <string name="CorreoRG">Correo Electronico</string>
+    <string name="ContraseñaRG">Contraseña</string>
+    <string name="ConfirmarClave">Confirmar Contraseña</string>
+    <string name="RegistrarUsuario">Registrar</string>
+    <string name="TengoUnaCuenta">Tengo Una Cuenta</string>
+    <string name="my_map_api_key">AIzaSyDT_LD34u2V7z6hie3-4k8e6iaoIraDJGQ</string>
+</resources>
