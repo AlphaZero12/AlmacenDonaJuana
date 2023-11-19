@@ -45,7 +45,6 @@
             android:exported="false" />
         <activity
             android:name=".InicioActivity"
-            android:theme="@style/AppTheme.AppBarOverlay"
             android:exported="false" />
         <activity
             android:name=".ActivityServiceClient"
