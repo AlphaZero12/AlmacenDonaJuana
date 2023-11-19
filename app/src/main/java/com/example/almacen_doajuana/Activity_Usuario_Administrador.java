@@ -20,7 +20,7 @@ public class Activity_Usuario_Administrador extends AppCompatActivity {
         botonusuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Activity_Usuario_Administrador.this, InicioActivity.class);
+                Intent intent = new Intent(Activity_Usuario_Administrador.this, MainActivity.class);
                 startActivity(intent);
 
             }

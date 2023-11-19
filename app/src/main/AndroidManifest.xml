@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -19,20 +18,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Almacen_DoñaJuana"
         tools:targetApi="31">
-        <activity
-            android:name=".Login_Admin"
-            android:exported="false" />
-        <activity
-            android:name=".Activity_Usuario_Administrador"
-            android:exported="false" />
-        <activity
-            android:name=".Mapa_Activity"
-            android:exported="false" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/my_map_api_key" />
 
+        <activity
+            android:name=".Activity_Usuario_Administrador"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Login_Admin"
+            android:exported="false" />
+        <activity
+            android:name=".Mapa_Activity"
+            android:exported="false" />
         <activity
             android:name=".ActivityProductos"
             android:exported="false" />
@@ -41,6 +45,7 @@
             android:exported="false" />
         <activity
             android:name=".InicioActivity"
+            android:theme="@style/AppTheme.AppBarOverlay"
             android:exported="false" />
         <activity
             android:name=".ActivityServiceClient"
@@ -50,13 +55,8 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.navigation.NavigationView;
+
 public class InicioActivity extends AppCompatActivity {
 
     private Button btnsearch;
@@ -17,26 +19,6 @@ public class InicioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        btnProductos = findViewById(R.id.btnProductos);
-        btnsearch= findViewById(R.id.btnsearch);
 
-        btnsearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Abrir la actividad InicioActivity
-                Intent intent = new Intent(InicioActivity.this, Mapa_Activity.class);
-                startActivity(intent);
-            }
-        });
-
-
-        btnProductos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Abrir la actividad ActivityProductos
-                Intent intent = new Intent(InicioActivity.this, ActivityProductos.class);
-                startActivity(intent);
-            }
-        });
     }
 }
