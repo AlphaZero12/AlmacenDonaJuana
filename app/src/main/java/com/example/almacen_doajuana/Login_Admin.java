@@ -150,7 +150,7 @@ public class Login_Admin extends AppCompatActivity {
         Intent intent = new Intent(Login_Admin.this, InicioActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("phone", phoneNumber);
-        intent.putExtra("papel","administrador");
+        intent.putExtra("papel","Administrador");
         startActivity(intent);
         finish();
     }

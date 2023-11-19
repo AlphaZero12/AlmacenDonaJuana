@@ -187,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this,InicioActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("phone",phoneNumber);
+        intent.putExtra("papel","Usuario");
         startActivity(intent);
         finish();
     }
