@@ -25,10 +25,6 @@
             android:id="@+id/nav_perfil"
             android:icon="@drawable/perfil"
             android:title="Perfil" />
-        <item
-            android:id="@+id/nav_Inventario"
-            android:icon="@drawable/categorias"
-            android:title="Inventario" />
 
         <item
             android:id="@+id/nav_mapa"

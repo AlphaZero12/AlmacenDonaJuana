@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fragmentTres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/person"
+        android:title="Perfil" />
+    <item
+        android:id="@+id/fragmentUno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/bxs_home"
+        android:title="Inicio" />
+    <item
+        android:id="@+id/fragmentDos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_lista"
+        android:title="Inventario" />
+
+
+    <item
+        android:id="@+id/fragmentCuatro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_categoria"
+        android:title="Ordenes" />
+
+    <item
+        android:id="@+id/fragmentCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_lista"
+        android:title="Productos" />
+</menu>

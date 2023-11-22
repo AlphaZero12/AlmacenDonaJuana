@@ -30,10 +30,9 @@ import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class SetupActivity extends AppCompatActivity {
+public class PerfilActivity extends AppCompatActivity {
     private EditText nombre,direccion,telefono,ciudad;
     private Button guardar;
-    private String phone="";
     private CircleImageView imagen;
     private FirebaseAuth auth;
     private DatabaseReference UserRef;
@@ -43,27 +42,61 @@ public class SetupActivity extends AppCompatActivity {
     private StorageReference UserImagenPerfil;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setup);
-        auth=FirebaseAuth.getInstance();
+        setContentView(R.layout.activity_perfil);
+        auth= FirebaseAuth.getInstance();
         CurrentUserId = auth.getCurrentUser().getUid();
         UserRef = FirebaseDatabase.getInstance().getReference().child("Usuarios");
         dialog = new ProgressDialog(this);
         UserImagenPerfil = FirebaseStorage.getInstance().getReference().child("Perfil");
-        nombre = (EditText)findViewById(R.id.setup_nombre);
-        ciudad = (EditText)findViewById(R.id.setup_ciudad);
-        direccion = (EditText)findViewById(R.id.setup_direccion);
-        telefono = (EditText)findViewById(R.id.setup_telefono);
-        guardar = (Button) findViewById(R.id.setup_boton);
-        imagen = (CircleImageView) findViewById(R.id.setup_imagen);
+        nombre = (EditText)findViewById(R.id.Perfil_nombre);
+        ciudad = (EditText)findViewById(R.id.Perfil_ciudad);
+        direccion = (EditText)findViewById(R.id.Perfil_direccion);
+        telefono = (EditText)findViewById(R.id.Perfil_telefono);
+        guardar = (Button) findViewById(R.id.Perfil_boton);
+        imagen = (CircleImageView) findViewById(R.id.Perfil_imagen);
 
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null)   {
-            phone = bundle.getString("phone");
-        }
+        UserRef.child(CurrentUserId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists() && snapshot.hasChild("imagen")) {
+                    String nombres = snapshot.child("nombre").getValue().toString();
+                    String direccions = snapshot.child("direccion").getValue().toString();
+                    String ciudads = snapshot.child("ciudad").getValue().toString();
+                    String telefonos = snapshot.child("telefono").getValue().toString();
+                    String imagens = snapshot.child("imagen").getValue().toString();
+
+                    Picasso.get()
+                            .load(imagens)
+                            .placeholder(R.drawable.do_a_juana)
+                            .into(imagen);
+                    nombre.setText(nombres);
+                    direccion.setText(direccions);
+                    ciudad.setText(ciudads);
+                    telefono.setText(telefonos);
+                } else if(snapshot.exists()) {
+                    String nombres = snapshot.child("nombre").getValue().toString();
+                    String direccions = snapshot.child("direccion").getValue().toString();
+                    String ciudads = snapshot.child("ciudad").getValue().toString();
+                    String telefonos = snapshot.child("telefono").getValue().toString();
+                    nombre.setText(nombres);
+                    direccion.setText(direccions);
+                    ciudad.setText(ciudads);
+                    telefono.setText(telefonos);
+
+
+                }
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,7 +133,6 @@ public class SetupActivity extends AppCompatActivity {
 
         }
     }
-
     private void GuardarInformacion() {
         String nombres = nombre.getText().toString().toUpperCase();
         String direccions =direccion.getText().toString();
@@ -136,18 +168,18 @@ public class SetupActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }else {
                         String mensaje = task.getException().toString();
-                        Toast.makeText(SetupActivity.this,"Error:"+mensaje,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PerfilActivity.this,"Error:"+mensaje,Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     }
                 }
             });
+        }
     }
-}
 
     private void EnviarAlInicio() {
-        Intent  intent = new Intent(SetupActivity.this,InicioActivity.class);
+        Intent  intent = new Intent(PerfilActivity.this,InicioActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
     }
-}
+    }

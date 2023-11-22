@@ -31,7 +31,7 @@ public class Login_Admin extends AppCompatActivity {
     private String VerificacionID;
     private PhoneAuthProvider.ForceResendingToken resendingToken;
     private FirebaseAuth auth;
-    private ProgressDialog dialog;
+    private ProgressDialog dialog;          
     private String phoneNumber;
 
     @Override
@@ -147,10 +147,9 @@ public class Login_Admin extends AppCompatActivity {
     }
 
     private void EnviarAlaPrincipal() {
-        Intent intent = new Intent(Login_Admin.this, InicioActivity.class);
+        Intent intent = new Intent(Login_Admin.this, AdminActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("phone", phoneNumber);
-        intent.putExtra("papel","Administrador");
         startActivity(intent);
         finish();
     }

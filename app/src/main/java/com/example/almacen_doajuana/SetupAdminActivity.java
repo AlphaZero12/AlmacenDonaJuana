@@ -30,7 +30,7 @@ import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class SetupActivity extends AppCompatActivity {
+public class SetupAdminActivity extends AppCompatActivity {
     private EditText nombre,direccion,telefono,ciudad;
     private Button guardar;
     private String phone="";
@@ -43,22 +43,21 @@ public class SetupActivity extends AppCompatActivity {
     private StorageReference UserImagenPerfil;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setup);
-        auth=FirebaseAuth.getInstance();
+        setContentView(R.layout.activity_setup_admin);
+        auth= FirebaseAuth.getInstance();
         CurrentUserId = auth.getCurrentUser().getUid();
-        UserRef = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+        UserRef = FirebaseDatabase.getInstance().getReference().child("Admin");
         dialog = new ProgressDialog(this);
         UserImagenPerfil = FirebaseStorage.getInstance().getReference().child("Perfil");
-        nombre = (EditText)findViewById(R.id.setup_nombre);
-        ciudad = (EditText)findViewById(R.id.setup_ciudad);
-        direccion = (EditText)findViewById(R.id.setup_direccion);
-        telefono = (EditText)findViewById(R.id.setup_telefono);
-        guardar = (Button) findViewById(R.id.setup_boton);
-        imagen = (CircleImageView) findViewById(R.id.setup_imagen);
+        nombre = (EditText)findViewById(R.id.adsetup_nombre);
+        ciudad = (EditText)findViewById(R.id.adsetup_ciudad);
+        direccion = (EditText)findViewById(R.id.adsetup_direccion);
+        telefono = (EditText)findViewById(R.id.adsetup_telefono);
+        guardar = (Button) findViewById(R.id.adsetup_boton);
+        imagen = (CircleImageView) findViewById(R.id.adsetup_imagen);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null)   {
@@ -82,7 +81,14 @@ public class SetupActivity extends AppCompatActivity {
         UserRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                if(snapshot.exists()){
+                    if (snapshot.hasChild("imagen")){
+                        String imagestr = snapshot.child("imagen").getValue().toString();
+                        Picasso.get().load(imagestr).into(imagen);
+                    }else {
+                        Toast.makeText(SetupAdminActivity.this,"Por favor selecione una imagen de perfil...",Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
 
             @Override
@@ -136,18 +142,17 @@ public class SetupActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }else {
                         String mensaje = task.getException().toString();
-                        Toast.makeText(SetupActivity.this,"Error:"+mensaje,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SetupAdminActivity.this,"Error:"+mensaje,Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     }
                 }
             });
+        }
     }
-}
 
     private void EnviarAlInicio() {
-        Intent  intent = new Intent(SetupActivity.this,InicioActivity.class);
+        Intent  intent = new Intent(SetupAdminActivity.this,AdminActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
-    }
-}
+    }}

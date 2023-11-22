@@ -10,4 +10,7 @@
     <string name="RegistrarUsuario">Registrar</string>
     <string name="TengoUnaCuenta">Tengo Una Cuenta</string>
     <string name="my_map_api_key">AIzaSyDT_LD34u2V7z6hie3-4k8e6iaoIraDJGQ</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

@@ -31,7 +31,6 @@
         android:layout_margin="15dp"
         android:backgroundTint="@color/white"
         android:src="@drawable/car" />
-
     <include layout="@layout/contenido_principal1" />
 
 </RelativeLayout>

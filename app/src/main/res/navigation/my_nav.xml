@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/fragmentUno">
+
+    <fragment
+        android:id="@+id/fragmentUno"
+        android:name="com.example.almacen_doajuana.FragmentUno"
+        android:label="fragment_uno"
+        tools:layout="@layout/fragment_uno" />
+    <fragment
+        android:id="@+id/fragmentDos"
+        android:name="com.example.almacen_doajuana.FragmentDos"
+        android:label="fragment_dos"
+        tools:layout="@layout/fragment_dos" />
+    <fragment
+        android:id="@+id/fragmentTres"
+        android:name="com.example.almacen_doajuana.FragmentTres"
+        android:label="fragment_tres"
+        tools:layout="@layout/fragment_tres" />
+
+    <fragment
+        android:id="@+id/fragmentCuatro"
+        android:name="com.example.almacen_doajuana.FragmentCuatro"
+        android:label="fragment_cuatro"
+        tools:layout="@layout/fragment_cuatro" />
+    <fragment
+        android:id="@+id/fragmentCinco"
+        android:name="com.example.almacen_doajuana.FragmentCinco"
+        android:label="fragment_cinco"
+        tools:layout="@layout/fragment_cinco" />
+
+
+
+</navigation>
