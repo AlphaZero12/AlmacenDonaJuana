@@ -5,67 +5,76 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:background="@color/ColorPrimary">
+        android:layout_height="500dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/ColorPrimary"
+        android:padding="10dp">
+
         <TextView
             android:id="@+id/ordenname"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Nombre"
             android:layout_marginLeft="5dp"
-            android:textSize="16dp"/>
+            android:text="Nombre"
+            android:textSize="20dp" />
+
         <TextView
             android:id="@+id/ordenphone"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Numero"
             android:layout_alignParentEnd="true"
-            android:textSize="16dp"
-            android:layout_marginRight="5dp"/>
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="5dp"
+            android:text="Numero"
+            android:textSize="16dp" />
+
         <TextView
             android:id="@+id/ordenprecio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Precio"
-            android:layout_marginLeft="5dp"
-            android:textSize="18dp"
-            android:gravity="center"
             android:layout_below="@+id/ordenname"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="57dp"
+            android:gravity="center"
+            android:text="Precio"
+            android:textSize="23sp" />
+
         <TextView
             android:id="@+id/ordencorreodir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Correo y Direccion"
-            android:layout_marginLeft="5dp"
-            android:textSize="16dp"
-            android:gravity="center"
             android:layout_below="@+id/ordenprecio"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="65dp"
+            android:gravity="center"
+            android:text="Correo y Direccion"
+            android:textSize="20dp" />
+
         <TextView
             android:id="@+id/ordenfecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fecha y Hora"
-            android:layout_marginLeft="5dp"
-            android:textSize="16dp"
-            android:gravity="center"
             android:layout_below="@+id/ordencorreodir"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="52dp"
+            android:gravity="center"
+            android:text="Fecha y Hora"
+            android:textSize="20dp" />
+
         <Button
             android:id="@+id/verproductosorden"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/ordenfecha"
-            android:text="Ver productos en esta orden"
-            android:background="@drawable/botones1"
-            android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="69dp"
+            android:layout_marginRight="30dp"
             android:layout_marginBottom="5dp"
-            />
+            android:background="@drawable/botones1"
+            android:text="Ver productos en esta orden" />
 
     </RelativeLayout>
 </RelativeLayout>

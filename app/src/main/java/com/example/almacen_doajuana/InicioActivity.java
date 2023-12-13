@@ -212,8 +212,8 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
        int id = item.getItemId();
         if (id == R.id.nav_carrito) {
-            ActivityCarrito();
-        }
+            Intent intent = new Intent(InicioActivity.this, CarritoActivity.class);
+            startActivity(intent);        }
         else if (id == R.id.nav_categorias) {
             ActivityCategoria();
         }

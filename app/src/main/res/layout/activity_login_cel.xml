@@ -5,14 +5,27 @@
     android:layout_height="match_parent"
     tools:context=".ActivityLoginCel">
 
+    <!-- ImageView agregado arriba de los elementos existentes -->
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/poerfil_imagen"
+    android:layout_marginTop="16dp"
+    android:contentDescription="Logo" />
+
     <EditText
         android:id="@+id/editTextPhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Número de teléfono"
-        android:inputType="phone"
-        android:padding="8dp" />
+        android:layout_below="@id/imageViewLogo"
+    android:layout_marginTop="16dp"
+    android:hint="Número de teléfono"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+    android:inputType="phone"
+    android:padding="8dp" />
 
     <Button
         android:id="@+id/buttonSendCode"
@@ -29,7 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonSendCode"
         android:layout_marginTop="16dp"
+        android:textColorHint="@color/black"
         android:hint="Código de verificación"
+        android:textColor="@color/black"
         android:inputType="text"
         android:padding="8dp" />
 
