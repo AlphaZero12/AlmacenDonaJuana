@@ -17,11 +17,6 @@
             android:title="Categorías" />
 
         <item
-            android:id="@+id/nav_buscar"
-            android:icon="@drawable/lista"
-            android:title="Buscar" />
-
-        <item
             android:id="@+id/nav_perfil"
             android:icon="@drawable/perfil"
             android:title="Perfil" />

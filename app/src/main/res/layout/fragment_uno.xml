@@ -24,11 +24,13 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginTop="40dp">
+
         <ImageView
             android:id="@+id/manzana"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ui_manzana"/>
+            android:src="@drawable/ui_manzana" />
+
         <ImageView
             android:id="@+id/limon"
             android:layout_width="wrap_content"
@@ -76,11 +78,13 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginTop="30dp">
+
         <ImageView
             android:id="@+id/brocoli"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:src="@drawable/ui_brocoli"/>
+            android:src="@drawable/ui_brocoli" />
+
         <ImageView
             android:id="@+id/frutilla"
             android:layout_width="75dp"

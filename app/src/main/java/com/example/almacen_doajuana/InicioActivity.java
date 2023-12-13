@@ -15,7 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -37,6 +36,7 @@ import com.squareup.picasso.Picasso;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class InicioActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private View cinco;
     private FirebaseAuth auth;
     private String CurrentUserId;
     private DatabaseReference UserRef,ProductosRef;
@@ -63,6 +63,8 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
         layoutManager=new LinearLayoutManager(this);
         reciclerMenu.setLayoutManager(layoutManager);
         botonFlotante = (FloatingActionButton)findViewById(R.id.fab);
+
+
         botonFlotante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,11 +122,12 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
             FirebaseRecyclerAdapter<Productos,ProductoViewHolder> adapter = new FirebaseRecyclerAdapter<Productos, ProductoViewHolder>(options) {
                 @Override
                 protected void onBindViewHolder(@NonNull ProductoViewHolder holder, int position, @NonNull Productos model) {
-                    holder.productoNom.setText(model.getNombre());
-                    holder.productoDescripci.setText(model.getDescripcion());
+                    holder.productoNom.setText("Nombre Producto: "+model.getNombre());
+                    holder.productoDescripci.setText("Descripcion: "+model.getDescripcion());
                     holder.productoCantidad.setText("Cantidad: "+model.getCantidad());
                     holder.productoprecio.setText("$:"+model.getPrecioven());
                     Picasso.get().load(model.getImagen()).into(holder.productoImagen);
+
 
 
                     holder.productoImagen.setOnClickListener(new View.OnClickListener() {
@@ -214,14 +217,11 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
         else if (id == R.id.nav_categorias) {
             ActivityCategoria();
         }
-        else if (id == R.id.nav_buscar) {
-            ActivityBuscar();
-        }
+
         else if (id == R.id.nav_perfil) {
             ActivityPerfil();
         }
         else if (id == R.id.nav_mapa) {
-            ActivityMapa();
             Intent intent = new Intent(InicioActivity.this, Mapa_Activity.class);
             startActivity(intent);
         }
@@ -237,7 +237,6 @@ public class InicioActivity extends AppCompatActivity implements NavigationView.
 
 
     private void ActivityMapa() {
-        Toast.makeText(this,"Mapa",Toast.LENGTH_SHORT).show();
 
     }
 

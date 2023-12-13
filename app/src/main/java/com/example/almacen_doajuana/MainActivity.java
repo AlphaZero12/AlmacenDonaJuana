@@ -49,9 +49,6 @@ public class MainActivity extends AppCompatActivity {
         enviarcodigo=(Button) findViewById(R.id.enviarcodigo);
         enviarnumero=(Button) findViewById(R.id.enviarnumero);
 
-        imageGoogle = findViewById(R.id.imageGoogle);
-        imageFacebook = findViewById(R.id.imageFacebook);
-        imageTwitter = findViewById(R.id.imageTwitter);
 
         auth=FirebaseAuth.getInstance();
         dialog = new ProgressDialog(this);
@@ -126,34 +123,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-        imageGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    String url ="https://www.google.com";
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(url));
-                    startActivity(intent);
-            }
-        });
-        imageFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url ="https://www.facebook.com";
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                startActivity(intent);
-            }
-        });
-        imageTwitter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url ="https://www.twitter.com";
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                startActivity(intent);
-            }
-        });
 
     }
 
