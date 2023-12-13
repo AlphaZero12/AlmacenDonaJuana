@@ -33,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.firebase:firebase-bom:32.7.0")
     implementation ("com.google.android.gms:play-services-maps:18.2.0")
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation("androidx.appcompat:appcompat:1.6.1")
